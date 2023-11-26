@@ -1,0 +1,12 @@
+version: '3'
+services:
+  full-app:
+    build: .
+    volumes:
+      - ./:/workplace
+    environment:
+      - WATCHPACK_POLLING=true
+    command: sh -c 'cd frontend && npm start'
+    ports:
+      - 8000:3000
+    tty: true
